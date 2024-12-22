@@ -1,0 +1,19 @@
+{
+    "roles": {
+        "Casting_Assistant": {
+            "description": "The casting assistant can watch actors and movies.",
+            "jwt_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldvTzlOSzByLW5YMGl1VWUyakJzMiJ9.eyJpc3MiOiJodHRwczovL2Rldi10aHV5bGUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY3NjZlOTQzYWY1N2UzMTc3M2I5NjcxOSIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTAwMCIsImlhdCI6MTczNDgyODE5MywiZXhwIjoxNzM0ODM1MzkzLCJzY29wZSI6IiIsImF6cCI6InUyOVh6eTJ1bXlhY1hrb1JpWlpPY0VoVjFINzRCQWF0IiwicGVybWlzc2lvbnMiOlsidmlldzphY3RvcnMiLCJ2aWV3Om1vdmllcyJdfQ.netqgECP9rF5wasnxG9rei14O9NiARltbpHJf9wCuSIuOCPoPI517qlrSHS9FtYOAF2ejHfopjEMVWSkusUGobO4K5oI0oidjiAuFc_m7i1Leod7Zj56TtZz7UZ1aGx41ZcHVAOKtq0r_rkPzHBB7gvcrAKkJ_R0YSjxV1UoChPc5RpFzDSkXhSRWTvRnptzqJlFNMlLSD5FnF5DQHd8qPKpViJMdMgrpSV7J9Fmkoo2Jcjyk2DlJUY1m3nBEyZPLE5GerYU_cspvheXdQ9PIsKc7-ymmprBPZFwXhcOT3qgQfKcRNWJrDRdMUnHQ728Hobtnw3_DzE3C1VgeVaeQA",
+            "permissions": ["view:actors", "view:movies"]
+        },
+        "Casting_Director": {
+            "description": "A casting director has all the powers of a Casting Assistant, but has the added power to add, delete, or edit actor and film information.",
+            "jwt_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldvTzlOSzByLW5YMGl1VWUyakJzMiJ9.eyJpc3MiOiJodHRwczovL2Rldi10aHV5bGUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY3NjZlOTVkNTUzYTFkMGQ0ZjVlM2VmNiIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTAwMCIsImlhdCI6MTczNDgyODI0NSwiZXhwIjoxNzM0ODM1NDQ1LCJzY29wZSI6IiIsImF6cCI6InUyOVh6eTJ1bXlhY1hrb1JpWlpPY0VoVjFINzRCQWF0IiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9yIiwiZGVsZXRlOmFjdG9yIiwiZWRpdDphY3RvciIsImVkaXQ6bW92aWUiLCJ2aWV3OmFjdG9ycyIsInZpZXc6bW92aWVzIl19.RRLkMB-1tJOlxKTDkhQhERWRkfh-XOZihxkGOzOlqNoMuZaM5fJ3IO5d1tDrd1c6Lywm_fdm8_La8ovOBy3mKyywzftizXrqw8hj0PHsdFbeoGsDDTtO4Cd96vMFDxaZgUgU1EAQDaVOYRngxVWbji0dqwu_56TSQsXzvnUL8bkGkoegkY71dJpZ-Jh_QfOJHPf2m41IKNBgaoB7L7D0kBWLsVOg_nGTiQiQjerWVvaDEUr-IJs8z8z7GaiNGpvdNy7sqQI6AUOUbPWJbG5cg362xnFv-OkO4bQ7s2e68nGI1A8epsfsLFF_rS4WuX9uBHa-gvprNK9r3aVQivoylg",
+            "permissions": ["view:actors", "view:movies", "delete:actor", "create:actor", "edit:actor", "edit:movie"]
+        },
+        "Executive_Producer": {
+            "description": "The Executive Producer has all the powers of the Casting Director, but has the additional power to add or remove films from the database.",
+            "jwt_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldvTzlOSzByLW5YMGl1VWUyakJzMiJ9.eyJpc3MiOiJodHRwczovL2Rldi10aHV5bGUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY3NjZlOTg4ZjgzZGQzZWJkZDQzNTlkZiIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTAwMCIsImlhdCI6MTczNDgyODI3NSwiZXhwIjoxNzM0ODM1NDc1LCJzY29wZSI6IiIsImF6cCI6InUyOVh6eTJ1bXlhY1hrb1JpWlpPY0VoVjFINzRCQWF0IiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9yIiwiY3JlYXRlOm1vdmllIiwiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwiZWRpdDphY3RvciIsImVkaXQ6bW92aWUiLCJ2aWV3OmFjdG9ycyIsInZpZXc6bW92aWVzIl19.piNgruS_icUjNEARgOFTWgbXAFLCPh4huyB4pz8Wipnj5xpsdTQmHkWfP4WGD1rjMnHhS4PIXyWe9JBvAtCG7NnlBG7VyIL74B8dD5DS54X4zvfVrCjktjl9ba08huQY-tyalPYXUHktTbTlszPvPbKsY9Z2Sz8SgS-UImT8S2Z_NmwI3AT43Yb6xIlLgn-ZsMqyoGOiQt6GLqiApootK9lfx9cAOQgU7wsxGkUTqfaXz4GiLDfkoZ3sUC3QpSs6YbboqRkwaijjAvnHkV6_lfnEZKP26ayotsszmYKSY12H7Y2QyWbC9RUJ5ThiOBBT85Q6asYBUk4jJp2sQmdOdw",
+            "permissions": ["view:actors", "view:movies", "delete:actor", "create:actor", "edit:actor", "edit:movie", "create:movie", "delete:movie"]
+        }
+    }
+}
