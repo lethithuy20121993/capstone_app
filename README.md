@@ -7,15 +7,18 @@ The Casting Agency Project models a company that is responsible for creating mov
 
 - **Flask** - Slim Python web library.
 - **SQLAlchemy** - Python ORM library.
-- **Heroku** - PaaS platform for easy hosting of web apps.
+- **Render** - platform for easy hosting of web apps.
 - **Postman** - API testing tool.
 
-## Installation Instructions
+## Running Locally
 
 1. Clone the project to the directory of your choice.
 2. Create a virtual environment in the project directory.
 3. run `pip install -r requirements.txt` to install project dependencies
-4. Add `DATABASE_URL`, `AUTH0_DOMAIN`, `API_IDENTIFIER`, `ALGORITHMS`, `JWT_SECRET`, `AUTH0_CLIENT_ID` to the environment variables of your system.  
+4. Database setup
+With Postgres running:
+create database has name is `mydb`
+5. Add `DATABASE_URL`, `AUTH0_DOMAIN`, `API_IDENTIFIER`, `ALGORITHMS`, `JWT_SECRET`, `AUTH0_CLIENT_ID` to the environment variables of your system.  
    On Unix systems, use:
    ```bash
    export DATABASE_URL={username}:{password}@{host}:{port}/{database_name}
@@ -23,34 +26,44 @@ The Casting Agency Project models a company that is responsible for creating mov
    ```
    in this project, to make the environment, please run  `source setup.sh` first
 5. run server with `source run_app.sh`
+6. Running test:
+`python test_app.py`
 
-#### Endpoints:
-- GET /actors and /movies
-- DELETE /actors/ and /movies/
-- POST /actors and /movies and
-- PATCH /actors/ and /movies/
+## Auth0 Setup
+All information about Auth0 saved in `setup.sh` file to export the environment variables
 
-## Roles
+### Roles
+Create three roles for users under Users & Roles section in Auth0
 1. Casting Assistant
-- GET /actors and /movies
+- Can view actors and movies
 
 2. Casting Director
-- GET /actors and /movies
-- ADD /actors and DELETE /actors
-- PATCH /actors and /movies
+- All permissions a Casting Assistant has and…
+- Add or delete an actor from the database
+- Modify actors or movies
 
 3. Executive Producer
-- GET /actors and /movies
-- ADD /actors and DELETE /actors
-- PATCH /actors and /movies
-- ADD /movies and DELETE /movies
+- All permissions a Casting Director has and…
+- Add or delete a movie from the database
 
-## JWT Tokens for each role:
-1. Casting Assistant
+### Permissions
+- view:actors
+- view:movies
+- delete:actor
+- create:actor
+- edit:actor
+- edit:movie
+- create:movie
+- delete:movie
 
-2. Casting Director
+### Set JWT Tokens in auth_config.json
+Use the following link to create users and sign them in, with this way, we will generate JWT tockens
+```bash
+https://{{YOUR_DOMAIN}}/authorize?audience={{API_IDENTIFIER}}&response_type=token&client_id={{YOUR_CLIENT_ID}}&redirect_uri={{YOUR_CALLBACK_URI}}
+```
 
-3. Executive Producer
+Note: `auth_config.json` using for running `test_app.py`
+Beside, we will use `Postman` for API testing tool.
 
 ## API Documentation
 ### Models
@@ -238,3 +251,13 @@ Error types:
 - 404: Resource Not Found
 - 422: Not Processable
 - 500: Internal Server Error
+
+## Live API Access
+The API for this project is hosted live and can be accessed at the following URL:
+```bash
+https://capstone-app-deployment-bmec.onrender.com
+```
+This API requires authentication, so please follow the instructions in the Auth0 Setup section to set up authentication tokens.
+
+## Testing Endpoints
+You can test the endpoints by using tools like Postman or curl. Ensure that you are authenticated and have the appropriate roles and permissions to test the endpoints.
