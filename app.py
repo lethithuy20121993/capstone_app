@@ -64,7 +64,7 @@ def create_app(test_config=None):
     return app
 
 # Initialize the application
-APP = create_app()
+app = create_app()
 
 if __name__ == '__main__':
     """
@@ -72,4 +72,4 @@ if __name__ == '__main__':
 
     The application is started on host `0.0.0.0` and port `3000` in debug mode.
     """
-    APP.run(host='0.0.0.0', port=3000, debug=True)
+    app.run(host='0.0.0.0', port=3000, debug=True)
